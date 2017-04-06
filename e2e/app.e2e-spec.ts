@@ -7,8 +7,8 @@ describe('mean-twitter App', () => {
     page = new MeanTwitterPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display a title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Chirps');
   });
 });

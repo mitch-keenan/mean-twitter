@@ -4,19 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { ChripMainComponent } from './chrip-main/chrip-main.component';
+import { ChripListComponent } from './chrip-list/chrip-list.component';
+import { ChirpService } from './chirp.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChripMainComponent
+    ChripListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ChirpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

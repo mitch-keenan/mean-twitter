@@ -8,7 +8,7 @@ export class Chirp {
 
     // Derived data
     userName: string; // Derived
-    likeCount: number;
-    rechripCount: number;
-    replyCount: number;
+    //likeCount: number;
+    //rechripCount: number;
+    //replyCount: number;
 }

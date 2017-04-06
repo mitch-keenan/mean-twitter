@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChripMainComponent } from './chrip-main.component';
+import { ChripListComponent } from './chrip-list.component';
 
-describe('ChripMainComponent', () => {
-  let component: ChripMainComponent;
-  let fixture: ComponentFixture<ChripMainComponent>;
+describe('ChripListComponent', () => {
+  let component: ChripListComponent;
+  let fixture: ComponentFixture<ChripListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChripMainComponent ]
+      declarations: [ ChripListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChripMainComponent);
+    fixture = TestBed.createComponent(ChripListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

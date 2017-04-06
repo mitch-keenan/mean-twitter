@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { ChirpListComponent } from './chirp-list/chirp-list.component';
 import { ChirpFormComponent } from './chirp-form/chirp-form.component';
 import { ChirpService } from './chirp.service';
+import { CountdownPipe } from './countdown.pipe';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent, ChirpListComponent, ChirpFormComponent
+        AppComponent,
+        ChirpListComponent,
+        ChirpFormComponent,
+        CountdownPipe
       ],
       imports: [ FormsModule, HttpModule ],
       providers: [ ChirpService ]

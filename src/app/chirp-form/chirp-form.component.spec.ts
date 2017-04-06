@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { ChirpService } from '../chirp.service';
 import { ChirpFormComponent } from './chirp-form.component';
+import { CountdownPipe } from '../countdown.pipe';
 
 describe('ChirpFormComponent', () => {
   let component: ChirpFormComponent;
@@ -12,7 +13,7 @@ describe('ChirpFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChirpFormComponent ],
+      declarations: [ ChirpFormComponent, CountdownPipe ],
       imports: [ FormsModule, HttpModule ],
       providers: [ ChirpService ]
     })

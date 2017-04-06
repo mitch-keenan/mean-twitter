@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { ChirpListComponent } from './chirp-list/chirp-list.component';
 import { ChirpService } from './chirp.service';
 import { ChirpFormComponent } from './chirp-form/chirp-form.component';
+import { CountdownPipe } from './countdown.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChirpListComponent,
-    ChirpFormComponent
+    ChirpFormComponent,
+    CountdownPipe
   ],
   imports: [
     BrowserModule,

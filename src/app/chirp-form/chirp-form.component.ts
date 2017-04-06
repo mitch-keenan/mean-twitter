@@ -27,10 +27,11 @@ export class ChirpFormComponent implements OnInit {
   }
 
   reset() {
-     this.chirp = new Chirp();
+    this.chirp = new Chirp();
 
-     // TODO use user service
-     this.chirp.userName = "Mitch";
+    // TODO use user service
+    this.chirp.userName = "Mitch";
+    this.chirp.body = "";
   }
 
 }

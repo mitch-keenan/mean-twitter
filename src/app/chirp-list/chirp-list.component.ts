@@ -5,10 +5,10 @@ import { ChirpService } from '../chirp.service';
 
 @Component({
   selector: 'app-chrip-list',
-  templateUrl: './chrip-list.component.html',
-  styleUrls: ['./chrip-list.component.css']
+  templateUrl: './chirp-list.component.html',
+  styleUrls: ['./chirp-list.component.css']
 })
-export class ChripListComponent implements OnInit {
+export class ChirpListComponent implements OnInit {
 
   chirps: Chirp[] = [];
 

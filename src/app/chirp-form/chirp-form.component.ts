@@ -10,6 +10,7 @@ import { Chirp } from '../chirp';
 })
 export class ChirpFormComponent implements OnInit {
 
+  callToAction: String = "What's chirping on?";
   placeholder: String = "Chirp Chirp..";
   chirp: Chirp;
 

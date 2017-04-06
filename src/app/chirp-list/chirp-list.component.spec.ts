@@ -1,26 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { ChirpService } from '../chirp.service';
-import { ChirpFormComponent } from './chirp-form.component';
+import { ChirpListComponent } from './chirp-list.component';
 
-describe('ChirpFormComponent', () => {
-  let component: ChirpFormComponent;
-  let fixture: ComponentFixture<ChirpFormComponent>;
+describe('ChripListComponent', () => {
+  let component: ChirpListComponent;
+  let fixture: ComponentFixture<ChirpListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChirpFormComponent ],
-      imports: [ FormsModule, HttpModule ],
-      providers: [ ChirpService ]
+      imports: [ HttpModule ],
+      providers: [ ChirpService ],
+      declarations: [ ChirpListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChirpFormComponent);
+    fixture = TestBed.createComponent(ChirpListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

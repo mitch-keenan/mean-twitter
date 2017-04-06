@@ -6,7 +6,7 @@ import 'rxjs/add/observable/of';
 
 import  { Chirp } from './chirp';
 
-const CHIRPS : Chirp[] = [
+var CHIRPS : Chirp[] = [
   {
     id: 0,
     userId: 0,
@@ -37,6 +37,10 @@ export class ChirpService {
 
   getAllChirps(): Observable<Chirp[]> {
     return Observable.of(CHIRPS);
+  }
+
+  postChirp(chirp: Chirp) {
+    CHIRPS.unshift(chirp);
   }
 
 }

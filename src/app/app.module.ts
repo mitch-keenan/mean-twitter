@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ChripListComponent } from './chrip-list/chrip-list.component';
 import { ChirpService } from './chirp.service';
+import { ChirpFormComponent } from './chirp-form/chirp-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChripListComponent
+    ChripListComponent,
+    ChirpFormComponent
   ],
   imports: [
     BrowserModule,

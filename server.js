@@ -3,6 +3,14 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+// Setup mongoose
+if(process.argv.length < 3) {
+  console.error('Please supply a mongo db uri as an argument');
+  process.abort();
+}
+mongoose.connect(process.argv[2]);
 
 // Import api routes
 const api = require('./server/routes/api');

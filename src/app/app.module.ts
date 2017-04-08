@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Headers } from '@angular/http';
 import { Autosize } from 'angular2-autosize/src/autosize.directive';
 
 import { AppComponent } from './app.component';

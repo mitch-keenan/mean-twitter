@@ -6,3 +6,18 @@
 .timeAgo {
     float: right;
 }
+
+@keyframes SlideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  } 
+}
+
+.slideDown {
+  animation: SlideDown 0.5s;
+}

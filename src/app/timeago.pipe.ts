@@ -17,19 +17,19 @@ export class TimeAgoPipe implements PipeTransform {
     let timeSince = Date.now() - date.getTime();
 
     if(timeSince < MINUTE) {
-      return 'Just Now';
+      return 'just now';
     } else if (timeSince < HOUR) {
-      return Math.round(timeSince / MINUTE) + ' Minutes Ago';
+      return Math.round(timeSince / MINUTE) + ' minutes ago';
     } else if (timeSince < DAY) {
-      return Math.round(timeSince / HOUR) + ' Hours Ago';
+      return Math.round(timeSince / HOUR) + ' hours ago';
     } else if (timeSince < WEEK) {
-      return Math.round(timeSince / DAY) + ' Days Ago';
+      return Math.round(timeSince / DAY) + ' days ago';
     } else if (timeSince < MONTH) {
-      return Math.round(timeSince / WEEK) + ' Weeks Ago';
+      return Math.round(timeSince / WEEK) + ' weeks ago';
     } else if (timeSince < YEAR) {
-      return Math.round(timeSince / MONTH) + ' Months Ago';
+      return Math.round(timeSince / MONTH) + ' months ago';
     } else {
-      return Math.round(timeSince / YEAR) + ' Years Ago';
+      return Math.round(timeSince / YEAR) + ' years ago';
     }
   }
 }

@@ -3,6 +3,10 @@
     float: right;
 }
 
+textarea {
+    resize: none;
+}
+
 .form-control {
     margin-bottom: 1rem;
 }

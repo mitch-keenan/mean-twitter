@@ -3,8 +3,9 @@
     <form #chirpForm="ngForm" (ngSubmit)="onSubmit($event)">
       <h4 class="card-title">{{ callToAction }}</h4>
       <textarea
-        class="form-control"
+        autosize
         rows="3"
+        class="form-control"
         name="body"
         minlength="4"
         maxlength="140"

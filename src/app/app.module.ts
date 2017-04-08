@@ -9,6 +9,7 @@ import { ChirpListComponent } from './chirp-list/chirp-list.component';
 import { ChirpService } from './chirp.service';
 import { ChirpFormComponent } from './chirp-form/chirp-form.component';
 import { CountdownPipe } from './countdown.pipe';
+import { TimeAgoPipe } from './timeago.pipe';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CountdownPipe } from './countdown.pipe';
     ChirpListComponent,
     ChirpFormComponent,
     CountdownPipe,
+    TimeAgoPipe,
     Autosize
   ],
   imports: [

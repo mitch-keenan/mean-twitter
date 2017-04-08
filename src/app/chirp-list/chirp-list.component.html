@@ -4,5 +4,6 @@
     <p class="card-text">{{ chirp.body }}</p>
     <a href="#" class="card-link">ReChirp</a>
     <a href="#" class="card-link">Reply</a>
+    <span class="timeAgo">{{ chirp.date | timeago }}</span>
   </div>
 </div>

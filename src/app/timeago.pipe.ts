@@ -14,6 +14,11 @@ const YEAR = 365 * DAY;
 })
 export class TimeAgoPipe implements PipeTransform {
   transform(date: Date) {
+    // TODO: This is a hack! dates are not deserializing as date objectss
+    if(typeof(date) === 'string') {
+      date = new Date(date);
+    }
+
     let timeSince = Date.now() - date.getTime();
 
     if(timeSince < MINUTE) {

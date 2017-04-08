@@ -4,6 +4,7 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const passport = require('passport');
 
 // Setup mongoose
 if(process.argv.length < 3) {
@@ -12,20 +13,27 @@ if(process.argv.length < 3) {
 }
 mongoose.connect(process.argv[2]);
 
-// Import api routes
-const api = require('./server/routes/api');
-
 const app = express();
 
 // post data parsers
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Setup Routes
-app.use(express.static(path.join(__dirname, 'dist')));
-app.use('/api/v1/', api);
+// Setup auth
+app.use(passport.initialize()); // 
 
-// Fallback
+// Include models and passport config
+require('./server/models/chirp');
+require('./server/models/user');
+require('./server/config/passport');
+
+// Static Route
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// API routing
+require('./server/routes/index.js')(app);
+
+// Fallback to the index page
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });

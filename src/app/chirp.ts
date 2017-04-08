@@ -1,5 +1,5 @@
 export class Chirp {
-    id: number;
+    _id: number;
     userId: number;
     body: string;
     date: Date;

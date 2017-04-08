@@ -5,7 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 
-import  { Chirp } from './chirp';
+import { UserService } from './user.service';
+import { Chirp } from './chirp';
 
 /* Mock Data
 var CHIRPS : Chirp[] = [
@@ -33,21 +34,21 @@ var CHIRPS : Chirp[] = [
 ];
 */
 
+const API = 'http://localhost:3000/api/v1/chirps';
+
 @Injectable()
 export class ChirpService {
 
   chirps: Chirp[] = [];
 
-  API = 'http://localhost:3000/api/v1';
-
-  constructor(private http: Http) { }
+  constructor(private http: Http, private userService: UserService) { }
 
   getAllChirps(): Observable<Chirp[]> {
     this.chirps = [];
-    this.http.get(`${this.API}/chirps`)
+    this.http.get(API)
       .map(res => res.json())
       .subscribe(data => {
-        data.forEach(chirp => {
+        data.forEach((chirp: Chirp) => {
           this.chirps.unshift(chirp);
         });
       });
@@ -56,7 +57,9 @@ export class ChirpService {
   }
 
   postChirp(chirp: Chirp) {
-    this.http.post(`${this.API}/chirps`, chirp)
+    let headers = this.userService.getHeaders();
+    console.log(headers);
+    this.http.post(API, chirp, headers)
       .map(res => res.json())
       .subscribe(data => {
         this.chirps.unshift(chirp);

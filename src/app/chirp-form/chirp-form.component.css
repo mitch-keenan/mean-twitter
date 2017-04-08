@@ -2,3 +2,12 @@
     margin-top: 0.5em;
     float: right;
 }
+
+.form-control {
+    margin-bottom: 1rem;
+}
+
+.card {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}

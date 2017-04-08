@@ -1,15 +1,22 @@
 <div class="row">
   <div class="card card-block">
-    <h4 class="card-title">{{ callToAction }}</h4>
-    <textarea
-      class="form-control"
-      rows="3"
-      [(ngModel)]="chirp.body"
-      placeholder="{{placeholder}}"
-      required>
-    </textarea>
-    <br>
-    <button class="btn btn-primary" (click)="pushChirp()">Chirp</button>
-    <label id="countdown"> {{ chirp.body | countdown:140 }} characters remaining</label>
+    <form #chirpForm="ngForm" (ngSubmit)="onSubmit($event)">
+      <h4 class="card-title">{{ callToAction }}</h4>
+      <textarea
+        class="form-control"
+        rows="3"
+        name="body"
+        minlength="4"
+        maxlength="140"
+        placeholder="{{placeholder}}"
+        [(ngModel)]="body"
+        #name="ngModel"
+        required></textarea>
+      <div *ngIf="formErrors.body" class="alert alert-danger">
+        {{ formErrors.body }}
+      </div>
+      <button type="submit" class="btn btn-primary">{{ buttonText }}</button>
+      <label id="countdown">{{ body | countdown:140 }}{{ charactersLabel }}</label>
+    </form>
   </div>
 </div>

@@ -8,7 +8,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CountdownPipe implements PipeTransform {
   transform(text: string, args: number) {
     let maxLength = args || 0;
-    let length = text.length;
+    let length = text ? text.length : 0;
 
     return (maxLength - length);
   }

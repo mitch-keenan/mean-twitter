@@ -85,7 +85,6 @@ export class LoginFormComponent {
   }
 
   onLoginComplete(data: any) {
-    console.log('log in result: ');
-    console.log(data);
+    //redirect to chirp list
   }
 }

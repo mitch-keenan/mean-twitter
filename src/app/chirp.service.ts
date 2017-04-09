@@ -58,7 +58,6 @@ export class ChirpService {
 
   postChirp(chirp: Chirp) {
     let headers = this.userService.getHeaders();
-    console.log(headers);
     this.http.post(API, chirp, headers)
       .map(res => res.json())
       .subscribe(data => {

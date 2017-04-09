@@ -5,15 +5,19 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const morgan = require('morgan');
 
 // Setup mongoose
 if(process.argv.length < 3) {
   console.error('Please supply a mongo db uri as an argument');
   process.abort();
 }
+mongoose.Promise = global.Promise;
 mongoose.connect(process.argv[2]);
 
 const app = express();
+
+app.use(morgan('dev'));
 
 // post data parsers
 app.use(bodyParser.json());

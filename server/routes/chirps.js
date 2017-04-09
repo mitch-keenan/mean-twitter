@@ -3,8 +3,6 @@ const auth = require('../middleware/auth.js');
 const Chirp = require('../models/chirp.js');
 const ChirpsController = express.Router();
 
-console.log(auth);
-
 ChirpsController.route('/')
   .get((req, res) => {
     Chirp.find({}, function(err, chirps) {
@@ -18,7 +16,7 @@ ChirpsController.route('/')
         userName: req.body.userName,
         date: req.body.date
     });
-    chirp.save((err) => {
+    chirp.save(err => {
         res.json({ ok: true });
     });
   });

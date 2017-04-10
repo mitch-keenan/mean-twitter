@@ -13,6 +13,8 @@ import { CountdownPipe } from './countdown.pipe';
 import { TimeAgoPipe } from './timeago.pipe';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { AuthGuard } from './auth.guard';
+import { routing } from './routing';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import { RegisterFormComponent } from './register-form/register-form.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
-  providers: [UserService, ChirpService],
+  providers: [UserService, ChirpService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

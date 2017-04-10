@@ -1,18 +1,12 @@
 <nav class="navbar navbar-light bg-primary">
   <h1 class="navbar-brand mb-0">{{title}}</h1>
-  <button *ngIf="userService.isLoggedIn()" (click)="userService.logOut()" class="btn btn-primary">Logout</button>
+  <div *ngIf="!userService.isLoggedIn()">
+    <a routerLink="/login" routerLinkActive="active" class="btn btn-primary">Login</a>
+    <a routerLink="/register" routerLinkActive="active" class="btn btn-primary">Register</a>
+  </div>
+  <a *ngIf="userService.isLoggedIn()" (click)="userService.logOut()" active="true" class="btn btn-primary">Logout</a>
 </nav>
-
 <br>
-
-<div *ngIf="!userService.isLoggedIn()" class="container">
-  <app-login-form></app-login-form>
-  <app-register-form></app-register-form>
-</div>
-
-<br>
-
-<div *ngIf="userService.isLoggedIn()" class="container">
-  <app-chirp-form></app-chirp-form>
-  <app-chrip-list></app-chrip-list>
+<div class="container">
+  <router-outlet></router-outlet>
 </div>

@@ -81,10 +81,6 @@ export class LoginFormComponent {
     user.email = this.email;
     user.password = this.password;
 
-    this.userService.login(user).subscribe(this.onLoginComplete);
-  }
-
-  onLoginComplete(data: any) {
-    //redirect to chirp list
+    this.userService.login(user);
   }
 }

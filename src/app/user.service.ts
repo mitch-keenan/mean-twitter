@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
+import { Router } from '@angular/router';
 
 import { JwtHelper } from 'angular2-jwt';
 
@@ -18,7 +19,7 @@ export class UserService {
 
   jwt: JwtHelper = new JwtHelper();
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private router: Router) { }
 
   saveToken(token: string) {
     localStorage.setItem(TOKEN_KEY, token);
@@ -42,6 +43,7 @@ export class UserService {
 
   logOut() {
     localStorage.removeItem(TOKEN_KEY);
+    this.router.navigate(['/login']);
   }
 
   isLoggedIn() {
@@ -68,6 +70,7 @@ export class UserService {
 
     result.subscribe(data => {
       this.saveToken(data.token);
+      this.router.navigate(['/']);
     });
 
     return result;
@@ -80,6 +83,7 @@ export class UserService {
     
     result.subscribe(data => {
       this.saveToken(data.token);
+      this.router.navigate(['/']);
     });
 
     return result;

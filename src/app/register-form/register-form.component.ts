@@ -86,11 +86,6 @@ export class RegisterFormComponent {
     user.name = this.fullname;
     user.password = this.password;
 
-    this.userService.register(user).subscribe(this.onRegisterComplete);
-  }
-
-  onRegisterComplete(data: any) {
-    console.log('register result: ');
-    console.log(data);
+    this.userService.register(user);
   }
 }

@@ -56,12 +56,15 @@ export class ChirpService {
     return Observable.of(this.chirps);
   }
 
-  postChirp(chirp: Chirp) {
+  postChirp(chirp: any) {
     let headers = this.userService.getHeaders();
     this.http.post(API, chirp, headers)
       .map(res => res.json())
       .subscribe(data => {
-        this.chirps.unshift(chirp);
+        console.log(data);
+        if(data.ok) {
+          this.chirps.unshift(data.data as Chirp);
+        }
       });
   }
 

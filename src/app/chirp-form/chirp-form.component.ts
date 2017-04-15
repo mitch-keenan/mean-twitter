@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { UserService } from '../user.service';
 import { ChirpService } from '../chirp.service';
 import { Chirp } from '../chirp';
 
@@ -34,7 +35,7 @@ export class ChirpFormComponent {
     }
   };
 
-  constructor(private chirpService: ChirpService) { }
+  constructor(private chirpService: ChirpService, private userService: UserService) { }
 
   ngAfterViewChecked() {
     this.formChanged();
@@ -79,12 +80,10 @@ export class ChirpFormComponent {
     }
 
     // Push a chirp
-    let chirp = new Chirp();
-    chirp.date = new Date();
-    chirp.userName = "Mitch"; // TODO: user service here
-    chirp.body = this.chirpForm.form.get('body').value;
-
-    this.chirpService.postChirp(chirp);
+    this.chirpService.postChirp({
+      user: this.userService.getCurrentUser().email,
+      body: this.chirpForm.form.get('body').value
+    });
 
     this.chirpForm.form.reset();
   }

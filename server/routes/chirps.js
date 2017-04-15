@@ -1,24 +1,32 @@
 const express = require('express');
 const auth = require('../middleware/auth.js');
+const User = require('../models/user.js');
 const Chirp = require('../models/chirp.js');
 const ChirpsController = express.Router();
 
 ChirpsController.route('/')
   .get((req, res) => {
-    Chirp.find({}, function(err, chirps) {
+    Chirp.find({})
+      .populate('user', ['name', 'email'])
+      .exec(function(err, chirps) {
         if (err) throw err;
         res.json(chirps);
-    });
+      });
   })
   .post(auth, (req, res) => {
-    let chirp = new Chirp({
-        body: req.body.body,
-        userName: req.body.userName,
-        date: req.body.date
-    });
-    chirp.save(err => {
-        res.json({ ok: true });
-    });
+    User.findOne({ 'email': req.body.user }, ['name', 'email'])
+      .exec(function(err, user) {
+        if(err) throw err;
+        let chirp = new Chirp({
+          body: req.body.body,
+          user: user._id,
+          date: new Date()
+        });
+        chirp.save(err => {
+          chirp.user = user;
+          res.json({ ok: true, data: chirp });
+        });
+      });
   });
 
 ChirpsController.route('/:id')

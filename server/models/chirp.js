@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let chirpSchema = new Schema({
-  userName: { type: String, required: true },
+  user: { type: Schema.Types.ObjectId, ref: 'User' },
   body: String,
   date: Date
 });

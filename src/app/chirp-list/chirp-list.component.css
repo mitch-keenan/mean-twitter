@@ -21,3 +21,7 @@
 .slideDown {
   animation: SlideDown 0.5s;
 }
+
+#chirp-list {
+  margin-bottom: 1rem;
+}

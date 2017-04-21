@@ -9,10 +9,6 @@
 		"MEAN_SECRET": {
 			"description": "A secret key for verifying the integrity of signed cookies.",
 			"generator": "secret"
-		},
-		"NPM_CONFIG_PRODUCTION": {
-			"description": "Leave this false, allows app build to properly occur.",
-			"value": "false"
 		}
 	},
 	"addons": [
@@ -20,8 +16,5 @@
 			"plan": "mongolab:sandbox",
 			"as": "MONGO_SERVER"
 		}
-	],
-	"scripts": {
-		"postdeploy": "npm run build"
-	}
+	]
 }

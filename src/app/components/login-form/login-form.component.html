@@ -1,4 +1,4 @@
-<div *ngIf="!userService.isLoggedIn()" class="row">
+<div *ngIf="!isLoggedIn()" class="row">
   <div class="card card-block">
     <form #loginForm="ngForm" (ngSubmit)="onSubmit($event)">
       <h4 class="card-title">{{ callToAction }}</h4>

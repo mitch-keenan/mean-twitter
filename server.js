@@ -9,7 +9,7 @@ const morgan = require('morgan');
 
 // Ensure environment variables are set
 if(!process.env.MEAN_SECRET || !process.env.MONGO_SERVER_URI) {
-  console.error('Please ensure MEAN_SECRET and MONGO_SERVER are set');
+  console.error('Please ensure MEAN_SECRET and MONGO_SERVER_URI are set');
   process.abort();
 }
 

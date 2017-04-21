@@ -35,6 +35,10 @@ export class LoginFormComponent {
 
   constructor(private userService: UserService) { }
 
+  isLoggedIn() {
+    return this.userService.isLoggedIn();
+  }
+
   ngAfterViewChecked() {
     this.formChanged();
   }

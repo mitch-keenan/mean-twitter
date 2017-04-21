@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,  } from '@angular/core';
 
 import { UserService } from './services/user.service';
 
@@ -11,4 +11,12 @@ export class AppComponent {
   title = 'Chirp!';
 
   constructor(private userService: UserService) { }
+
+  isLoggedIn() {
+    return this.userService.isLoggedIn();
+  }
+
+  getCurrentUser() {
+    return this.userService.getCurrentUser();
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Chirp } from '../chirp';
-import { ChirpService } from '../chirp.service';
+import { Chirp } from '../../models/chirp';
+import { ChirpService } from '../../services/chirp.service';
 
 @Component({
   selector: 'app-chrip-list',

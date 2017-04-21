@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { UserService } from '../user.service';
-import { ChirpService } from '../chirp.service';
-import { Chirp } from '../chirp';
+import { UserService } from '../../services/user.service';
+import { ChirpService } from '../../services/chirp.service';
+import { Chirp } from '../../models/chirp';
 
 @Component({
   selector: 'app-chirp-form',

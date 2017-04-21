@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { ChirpListComponent } from './chirp-list/chirp-list.component';
-import { ChirpFormComponent } from './chirp-form/chirp-form.component';
-import { ChirpService } from './chirp.service';
-import { CountdownPipe } from './countdown.pipe';
+import { ChirpListComponent } from './components/chirp-list/chirp-list.component';
+import { ChirpFormComponent } from './components/chirp-form/chirp-form.component';
+import { ChirpService } from './services/chirp.service';
+import { CountdownPipe } from './shared/countdown.pipe';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

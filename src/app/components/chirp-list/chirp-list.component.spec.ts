@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HttpModule } from '@angular/http';
 
-import { ChirpService } from '../chirp.service';
+import { ChirpService } from '../../services/chirp.service';
 import { ChirpListComponent } from './chirp-list.component';
 
 describe('ChripListComponent', () => {

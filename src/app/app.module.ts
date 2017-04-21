@@ -5,15 +5,15 @@ import { HttpModule, Headers } from '@angular/http';
 import { Autosize } from 'angular2-autosize/src/autosize.directive';
 
 import { AppComponent } from './app.component';
-import { UserService } from './user.service';
-import { ChirpListComponent } from './chirp-list/chirp-list.component';
-import { ChirpService } from './chirp.service';
-import { ChirpFormComponent } from './chirp-form/chirp-form.component';
-import { CountdownPipe } from './countdown.pipe';
-import { TimeAgoPipe } from './timeago.pipe';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
-import { AuthGuard } from './auth.guard';
+import { UserService } from './services/user.service';
+import { ChirpListComponent } from './components/chirp-list/chirp-list.component';
+import { ChirpService } from './services/chirp.service';
+import { ChirpFormComponent } from './components/chirp-form/chirp-form.component';
+import { CountdownPipe } from './shared/countdown.pipe';
+import { TimeAgoPipe } from './shared/timeago.pipe';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { AuthGuard } from './shared/auth.guard';
 import { routing } from './routing';
 
 @NgModule({

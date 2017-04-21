@@ -6,7 +6,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 
 import { UserService } from './user.service';
-import { Chirp } from './chirp';
+import { Chirp } from '../models/chirp';
 
 /* Mock Data
 var CHIRPS : Chirp[] = [

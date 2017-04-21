@@ -9,7 +9,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/share';
 
-import  { User } from './user';
+import  { User } from '../models/user';
 
 const TOKEN_KEY = 'mean-twitter-token';
 const API = 'http://localhost:3000/api/v1/users';

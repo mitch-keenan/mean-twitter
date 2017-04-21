@@ -12,7 +12,7 @@ import 'rxjs/add/operator/share';
 import  { User } from '../models/user';
 
 const TOKEN_KEY = 'mean-twitter-token';
-const API = 'http://localhost:3000/api/v1/users';
+const API = '/api/v1/users';
 
 @Injectable()
 export class UserService {

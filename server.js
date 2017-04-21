@@ -7,13 +7,15 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const morgan = require('morgan');
 
-// Setup mongoose
-if(process.argv.length < 3) {
-  console.error('Please supply a mongo db uri as an argument');
+// Ensure environment variables are set
+if(!process.env.MEAN_SECRET || !process.env.MONGO_SERVER) {
+  console.error('Please ensure MEAN_SECRET and MONGO_SERVER are set');
   process.abort();
 }
+
+// Setup mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect(process.argv[2]);
+mongoose.connect(process.env.MONGO_SERVER);
 
 const app = express();
 

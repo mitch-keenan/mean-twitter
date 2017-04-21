@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "ng build && node server.js",
+    "start": "node server.js",
     "setenv": ". ../set_env.sh",
     "ng": "ng",
     "serve": "ng serve",

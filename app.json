@@ -17,5 +17,8 @@
 			"plan": "mongolab:sandbox",
 			"as": "MONGO_SERVER"
 		}
-	]
+	],
+	"scripts": {
+		"postdeploy": "npm run build"
+	}
 }

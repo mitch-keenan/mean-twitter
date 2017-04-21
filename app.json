@@ -6,15 +6,15 @@
 	],
 	"repository": "https://github.com/konamacona/mean-twitter",
 	"env": {
-		"SECRET_TOKEN": {
+		"MEAN_SECRET": {
 			"description": "A secret key for verifying the integrity of signed cookies.",
 			"generator": "secret"
 		}
 	},
 	"addons": [
 		{
-			"plan": "mongolab:shared-single-small",
-			"as": "MONGO"
+			"plan": "mongolab:sandbox",
+			"as": "MONGO_SERVER"
 		}
 	]
 }

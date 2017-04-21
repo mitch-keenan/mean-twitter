@@ -15,7 +15,7 @@
 	"addons": [
 		{
 			"plan": "mongolab:sandbox",
-			"as": "MONGO_SERVER"
+			"as": "MONGO_SERVER_URI"
 		}
 	]
 }

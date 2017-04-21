@@ -8,14 +8,14 @@ const passport = require('passport');
 const morgan = require('morgan');
 
 // Ensure environment variables are set
-if(!process.env.MEAN_SECRET || !process.env.MONGO_SERVER) {
+if(!process.env.MEAN_SECRET || !process.env.MONGO_SERVER_URI) {
   console.error('Please ensure MEAN_SECRET and MONGO_SERVER are set');
   process.abort();
 }
 
 // Setup mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_SERVER);
+mongoose.connect(process.env.MONGO_SERVER_URI);
 
 const app = express();
 

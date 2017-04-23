@@ -7,9 +7,24 @@ import { ChirpListComponent } from './components/chirp-list/chirp-list.component
 import { AuthGuard } from './shared/auth.guard';
 
 const appRoutes: Routes = [
-  { path: '',         component: ChirpListComponent,    canActivate: [ AuthGuard ] },
-  { path: 'login',    component: LoginFormComponent },
-  { path: 'register', component: RegisterFormComponent },
+  {
+    path: '',
+    component: ChirpListComponent,
+    canActivate: [ AuthGuard ],
+    data: { "loggedIn": true }
+  },
+  {
+    path: 'login',
+    component: LoginFormComponent,
+    canActivate: [ AuthGuard ],
+    data: { "loggedIn": false }
+  },
+  {
+    path: 'register',
+    component: RegisterFormComponent,
+    canActivate: [ AuthGuard ],
+    data: { "loggedIn": false }
+  },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

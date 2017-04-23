@@ -19,4 +19,8 @@ export class AppComponent {
   getCurrentUser() {
     return this.userService.getCurrentUser();
   }
+
+  logOut() {
+    this.userService.logOut();
+  }
 }

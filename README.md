@@ -20,4 +20,8 @@ A clone of twitter to learn the MEAN Stack
 
 ## See it in action 
 
+[Running Live on Heroku (Content May Vary)](http://mean-twitter.herokuapp.com)
+
+Or you can deploy your own copy:
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/konamacona/mean-twitter)

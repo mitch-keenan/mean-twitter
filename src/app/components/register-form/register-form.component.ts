@@ -33,7 +33,7 @@ export class RegisterFormComponent {
   };
   validationMessages = {
     'email': { 'required': 'You have to provide an email!' },
-    'fullname': { 'required': 'You have to provide a name' },
+    'fullname': { 'required': 'You have to provide a name!' },
     'password': { 'required': 'You have to provide a password!' }
   };
 

@@ -84,6 +84,8 @@ export class UserService {
     result.subscribe(data => {
       this.saveToken(data.token);
       this.router.navigate(['/']);
+    }, err => {
+      // Let the caller handle this.
     });
 
     return result;

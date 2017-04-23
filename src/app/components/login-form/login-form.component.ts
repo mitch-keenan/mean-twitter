@@ -24,13 +24,14 @@ export class LoginFormComponent {
   // Form setup
   @ViewChild('loginForm') currentForm: NgForm;
   loginForm: NgForm;
+  errorMessage: '';
   formErrors = {
     'email': '',
     'password': ''
   };
   validationMessages = {
-    'email': { 'required': 'You have to chirp something!' },
-    'password': { 'required': 'You have to chirp something!' }
+    'email': { 'required': 'Email address required!' },
+    'password': { 'required': 'Password required!' }
   };
 
   constructor(private userService: UserService) { }
@@ -85,6 +86,10 @@ export class LoginFormComponent {
     user.email = this.email;
     user.password = this.password;
 
-    this.userService.login(user);
+    this.userService.login(user)
+    .subscribe(
+      result => { /* user service will redirect on successful login */ },
+      error => { console.log(error); this.errorMessage = JSON.parse(error._body).message; }
+    );
   }
 }

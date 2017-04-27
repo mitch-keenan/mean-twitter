@@ -20,7 +20,7 @@ A clone of twitter to learn the MEAN Stack
 
 ## See it in action 
 
-[Running Live on Heroku (Content May Vary)](http://mean-twitter.herokuapp.com)
+[Running Live on Heroku (Content May Vary)](https://mean-twitter.herokuapp.com)
 
 Or you can deploy your own copy:
 
